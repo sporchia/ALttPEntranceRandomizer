@@ -315,7 +315,10 @@ def patch_rom(world, rom, hashtable, quickswap=False, beep='normal', sprite=None
 
     # write link sprite if required
     if sprite is not None:
-        write_bytes(rom, 0x80000, sprite)
+        write_bytes(rom, 0x80000, sprite[:0x7000]) # graphics
+        write_bytes(rom, 0xDD308, sprite[0x7000:0x7078]) # Palette
+        write_bytes(rom, 0xDEDF5, sprite[0x7036:0x7038]) # gloves
+        write_bytes(rom, 0xDEDF7, sprite[0x7054:0x7056]) # gloves
 
     return rom
 

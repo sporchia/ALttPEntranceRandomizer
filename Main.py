@@ -656,7 +656,7 @@ if __name__ == '__main__':
     parser.add_argument('--beatableonly', help='Only check if the game is beatable with placement. Do not ensure all locations are reachable. This only has an effect on the restrictive algorithm currently.', action='store_true')
     parser.add_argument('--heartbeep', default='normal', const='normal', nargs='?', choices=['normal', 'half', 'quarter', 'off'],
                         help='Select the rate at which the heart beep sound is played at low health.')
-    parser.add_argument('--sprite', help='Path to a sprite sheet to use for Link. Needs to be in binary format and have a length of 0x7000 (28672) bytes.')
+    parser.add_argument('--sprite', help='Path to a sprite file (spr) to use for Link. Needs to be in binary format and have a length of 0x7078 (28792) bytes.')
     parser.add_argument('--suppress_rom', help='Do not create an output rom file.', action='store_true')
     args = parser.parse_args()
 
